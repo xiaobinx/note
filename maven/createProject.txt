@@ -1,0 +1,5 @@
+-- java项目
+mvn archetype:generate -DgroupId=xiaobinx -DartifactId=sfdemo
+
+-- web项目
+mvn archetype:generate -DgroupId=com.zwt -DartifactId=MySpringMVC -DarchetypeArtifactId=maven-archetype-webapp
