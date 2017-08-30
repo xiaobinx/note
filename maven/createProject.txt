@@ -2,4 +2,4 @@
 mvn archetype:generate -DgroupId=xiaobinx -DartifactId=sfdemo
 
 -- web项目
-mvn archetype:generate -DgroupId=com.zwt -DartifactId=MySpringMVC -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=xiaobinx -DartifactId=mvmwebproject -DarchetypeArtifactId=maven-archetype-webapp
