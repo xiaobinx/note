@@ -1,4 +1,6 @@
 
+-- 设置远程登录
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'q123456' WITH GRANT OPTION;
 
 show variables like '%log_queries_not_using_indexes%';
 show variables like '%long_query_time%';
