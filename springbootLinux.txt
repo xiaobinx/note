@@ -7,16 +7,20 @@ chown -R mmcg /home/mmcg/tomcat7
 [Unit]
 Description=mmcg
 After=syslog.target
+
 [Service]
-User=mmcg
-ExecStart=/home/mmcg/mmcg.jar
+ExecStart=/usr/lib/jvm/jdk1.8.0_72/bin/java -jar /root/app/mmcg/mmcg.jar --spring.profiles.active=proc
 SuccessExitStatus=143
+
 [Install]
 WantedBy=multi-user.target
+
 
 systemctl start mmcg.service
 systemctl stop mmcg.service
 systemctl restart mmcg.service
+
+systemctl enable mmcg.service
 
 
 
