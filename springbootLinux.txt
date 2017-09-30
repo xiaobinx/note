@@ -1,0 +1,26 @@
+useradd -s /sbin/nologin -M mmcg
+chown -R mmcg /home/mmcg/tomcat7
+
+
+/etc/systemd/system/mmcg.service
+
+[Unit]
+Description=mmcg
+After=syslog.target
+[Service]
+User=mmcg
+ExecStart=/home/mmcg/mmcg.jar
+SuccessExitStatus=143
+[Install]
+WantedBy=multi-user.target
+
+systemctl start mmcg.service
+systemctl stop mmcg.service
+systemctl restart mmcg.service
+
+
+
+
+
+
+sudo ln -s /root/app/mmcg/mmcg.jar /etc/init.d/mmcg
