@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+		"Microsoft YaHei", sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+}
+</style>
+<style type="text/css">
+ul {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
+	list-style: none;
+	width: 500px;
+}
+
+li {
+	background-color: green;
+	padding: 5px;
+	margin: 5px;
+	color: #fff;
+	margin: 5px;
+}
+
+li:nth-child(2) {
+	align-self: stretch;
+}
+/*
+	display: flex; 一旦将 display 属性设置为 flex ，无序列表就会自动变成 弹性容器 ，子元素（即，列表项元素 li ）就变成了 弹性项目 。
+	// display设置成flex后可以使用以下属性来设置弹性项目的样式
+	flex-direction || flex-wrap || flex-flow || justify-content || align-items || align-content
+
+	flex-direction: row(默认) || column || row-reverse || column-reverse; 属性控制弹性项目沿着 主轴 排列的方向。
+	flex-wrap: wrap || no-wrap(默认) || wrap-reverse; 属性控制弹性容器内的可用空间不能容纳默认宽度的弹性项目时，就沿着 主轴 排列的方向分成多行来容纳。
+
+	flex-flow: row wrap; flex-direction flex-wrap 的简写
+	
+	justify-content: flex-start || flex-end || center || space-between || space-around 属性定义弹性项目如何在主轴上对齐
+	
+	align-items: flex-start || flex-end || center || stretch || baseline 定义弹性项目如何在 侧轴 方向对齐
+	
+	align-content: 属性用于多行弹性容器
+						stretch ->弹性项目沿着侧轴伸展填满可用空间。
+						flex-start ->多行容器内的项目对齐到侧轴的开头
+						flex-end ->值将弹性项目对齐到侧轴的末尾
+						center ->值将弹性项目对齐到侧轴的中心
+
+弹性项目的属性 order || flex-grow || flex-shrink || flex-basis
+	order 改变弹性项目的排序，默认情况下，所有的弹性项目的 order 值都是 0 。
+	flex-grow和flex-shrink属性控制弹性项目在有多余空间的时候如何伸展，或者在空间不足的时候如何收缩。
+		默认情况下， flex-grow 属性被设置为 0 。就是弹性项目不会伸展以填满整个可用空间。
+		在默认情况下，flex-shrink 属性被为值为 1。就是弹性项目会自动进行收缩。
+
+	flex-basis在用flex-grow或者flex-shrink属性调整弹性项目的大小，以适应容器与否之前**，可以用 flex-basis 属性指定一个弹性项目的初始大小。
+		默认值是 flex-basis: auto 。 flex-basis 可以采用在 width 属性上用过的所有值，即， 百分比 || em || rem || 像素 等。
+		注意，如果要把 flex-basis 属性设置为基于零的值，也要把单位带上。要用 flex-basis: 0px ，不能只是 flex-basis: 0 。
+
+	flex: 0 1 auto; flex-grow,flex-shrink和flex-basis属性的简写
+		如果只设置了flex-grow和flex-shrink值，flex-basis会被默认设置为零。这被称为绝对弹性 。如果只设置flex-basis，就得到一个 相对弹性 。
+		flex: 0 1 auto等同于flex: default
+		flex: 0 0 auto等同于flex: none
+		flex: 1 1 auto等同于flex: auto
+		Flex: "正数" 这里正数可以代表任何正数（没有引号）。这与 flex: “正数” 1 0 相同。flex: 2 1 0 与写为 flex: 2 是一样的，2 表示任何正数。
+		
+	align-self: auto || flex-start || flex-end || center || baseline || stretch 。
+		align-items是定义所有弹性项目如何在 侧轴 方向对齐，align-self则是定义单个弹性项目在 侧轴 方向对齐
+*/
+</style>
+</head>
+<body>
+	<ul>
+		<li>2222222222222222<br />2222222222222222222222
+		</li>
+		<li>1111111<br />111111
+		</li>
+		<li>22sdfd22<br />ssss
+		</li>
+		<li>2afgwer<br />ssasdfadsfa<br />aasdfasdfa<br />asdfasdfa
+		</li>
+		<li>333<br />asdfasdfa
+		</li>
+		<li>22a<br />sdaadfs<br />dasdfasdfasd
+		</li>
+		<li>222as<br />daxcadsfsd<br />asd
+		</li>
+	</ul>
+</body>
+</html>
