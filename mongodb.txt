@@ -1,0 +1,1 @@
+mongod --dbpath "D:\dev\MongoDB\Server\3.4\data\db" --logpath "D:\dev\MongoDB\Server\3.4\data\logs\mongodb.log" --install --serviceName "MongoDB"

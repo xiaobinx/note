@@ -22,6 +22,8 @@ systemctl restart mmcg.service
 
 systemctl enable mmcg.service
 
+systemctl disable mmcg.service
+
 
 
 
