@@ -1,15 +1,23 @@
 useradd -s /sbin/nologin -M mmcg
 chown -R mmcg /home/mmcg/tomcat7
 
+-- JDK
+/etc/profile
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_151/bin
+export CLASSPATH=.:$JAVA_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
 
-/etc/systemd/system/mmcg.service
+source /etc/profile
+
+
+vim /etc/systemd/system/mmcg.service
 
 [Unit]
 Description=mmcg
 After=syslog.target
 
 [Service]
-ExecStart=/usr/lib/jvm/jdk1.8.0_72/bin/java -jar /root/app/mmcg/mmcg.jar --spring.profiles.active=proc
+ExecStart=/usr/lib/jvm/jdk1.8.0_151/bin/java -jar /root/mmcg.jar --spring.profiles.active=pro
 SuccessExitStatus=143
 
 [Install]
