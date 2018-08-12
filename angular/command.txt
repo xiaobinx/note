@@ -1,0 +1,22 @@
+常用命令
+--安装
+npm install -g @angular/cli --安装angular/cli
+
+ng new projectName --style=scss --routing 创建一个项目，使用路由，使用scss语法
+
+--开发
+ng serve --open --打开开发服务器
+ng generate component componentName 创建一个组件
+ng generate service serviceName 创建一个服务
+
+ng generate module app-routing --flat --module=app 添加路由支持
+    --flat 把这个文件放进了 src/app 中，而不是单独的目录中。
+    --module=app 告诉 CLI 把它注册到 AppModule 的 imports 数组中。
+
+
+常用angular指令
+{{}} 插值
+{{ selectedHero.name | uppercase }}插值中使用管道
+[(ngModel)]="selectedHero.name" 双向数据绑定 表单
+
+[hero] 单项数据绑定到子组件

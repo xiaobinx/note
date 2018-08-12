@@ -1,7 +1,4 @@
-useradd -s /sbin/nologin -M mmcg
-chown -R mmcg /home/mmcg/tomcat7
-
--- JDK
+-- JDK 环境变量
 /etc/profile
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_151/bin
 export CLASSPATH=.:$JAVA_HOME/lib
@@ -9,9 +6,10 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 source /etc/profile
 
-
+-- 创建服务文件
 vim /etc/systemd/system/mmcg.service
 
+-- 文件内容 ---start
 [Unit]
 Description=mmcg
 After=syslog.target
@@ -22,6 +20,8 @@ SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target
+
+-- 文件内容 ---end
 
 
 systemctl start mmcg.service

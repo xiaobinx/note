@@ -1,0 +1,8 @@
+-- 路由配置文件案例
+app-routing.module.ts
+
+-- 路由缓存配置
+SimpleReuseStrategy.ts
+
+-- 路由插座
+<router-outlet></router-outlet>
