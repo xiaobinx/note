@@ -27,3 +27,20 @@ git revert HEAD
 
 #仅显示最近的两次更新
 git log -2
+
+# 创建轻量标签 
+git tag v0.1.2-light  
+# 创建附注标签 
+git tag -a v0.1.2 -m "发布0.1.2版本"
+# 切换到标签
+与切换分支命令相同，用git checkout [tagname]
+# 查看标签信息，用git show命令可以查看标签的版本信息：
+git show v0.1.2 
+# 删除标签，误打或需要修改标签时，需要先将标签删除，再打新标签。
+git tag -d v0.1.2 # 删除标签
+# 补打标签，打标签不必要在head之上，也可在之前的版本上打，这需要你知道某个提交对象的校验和（通过git log获取）。
+git tag -a v0.1.1 9fbc3d0
+标签发布
+# 通常的git push不会将标签对象提交到git服务器，我们需要进行显式的操作：
+git push origin v0.1.2 # 将v0.1.2标签提交到git服务器 
+git push origin --tags # 将本地所有标签一次性提交到git服务器
