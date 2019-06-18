@@ -6,3 +6,6 @@ SimpleReuseStrategy.ts
 
 -- 路由插座
 <router-outlet></router-outlet>
+
+-- 路由连接
+<a routerLink="/dashboard">Dashboard</a>

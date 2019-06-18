@@ -1,0 +1,59 @@
+1.安装
+	* npm install --save @angular/material @angular/cdk
+2.接著在AppModule中的imports裡面加入BrowserAnimationsModule
+	import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+	@NgModule({
+	  ...
+	  imports: [
+		...
+		BrowserAnimationsModule
+	  ],
+	  ...
+	})
+	export class AppModule { }
+	2.1 雖然動畫效果會讓畫面更加豐富，但也有可能會有效能問題，且不是每個人都喜歡那麼多的特效，想要取消特效的話，可以改加入NoopAnimationsModule
+	2.2 關於@angular/animations的支援度
+		@angular/animations使用了WebAnimation API，但不是所有瀏覽器都有支援，如果你希望盡可能讓所有瀏覽器都支援，可以安裝web-animations.js套件。
+	npm install --save web-animations-js
+	接著打開src/pollyills.ts檔案，找到import 'web-animations-js'這一行，並且把它取消註解掉，如果找不到這一行，也可以直接手動加入就好。
+3.匯入想要顯示的元件模組
+	3.1 Angular Material將所有的主要元件都都方入對應的模組之中(MatXXXModule)，讓我們只有需要使用到某一群元件時，匯入相關模組就好，避免匯入過多不必要的元件。
+	3.2 在要使用的Module中匯入MatXXXModule
+	假如我們要使用Angular Material的button特性，可以匯入MatButtonModule
+		import { MatButtonModule } from '@angular/material';
+		import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+		@NgModule({
+		  ...
+		  imports: [
+			...
+			BrowserAnimationsModule, 
+			MatButtonModule
+		  ],
+		  ...
+		})
+		export class AppModule {}
+4.利用SharedModule先整理出常用的MatXXXModule
+另外一種方式是**，建立一個SharedModule，將常用的MatXXXModule先import，再export出來**，在其他Module中就只要import這個SharedModule就好，這在較複雜的SPA程式中會非常實用。當然這個SharedModule只是個概念，實際上我們可以用這個概念分類出不同的Modules，例如專門放常用的Angular Material Components的Module我們就取名叫做SharedMaterialModule吧！
+	import { NgModule } from '@angular/core';
+	import { CommonModule } from '@angular/common';
+	import { MatButtonModule } from '@angular/material';
+
+	@NgModule({
+	  imports: [MatButtonModule], // 先import
+	  exports: [MatButtonModule] // 在export
+	})
+	export class SharedMaterialModule {}
+
+
+5.加入theme設定
+	@angular/material/prebuilt-themes/下
+	indigo-pink.css
+	deeppurple-amber.css
+	pink-bluegrey.css
+	purple-green.css
+	把這個theme的css加到styles.css中。
+	@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+6.加入Material Icons
+	直接在index.html中加入相關Icon Font的CDN
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
